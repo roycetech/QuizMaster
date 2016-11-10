@@ -43,6 +43,8 @@ This is a simple demo app written in Ruby using Rails, Twitter Bootstrap.
 3. Optionally run `bundle install` inside the project in case of error.
 4. generate rails using CLI
 5. Configure live-reload see changes in view as you edit.
+6. Scaffold the question
+7. Set the root to `home/view`
 
 
 # References:
