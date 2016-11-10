@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+
+gem 'numbers_in_words'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 # Use sqlite3 as the database for Active Record
@@ -30,6 +32,12 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
+
+  gem 'rspec-rails'
+  gem 'mocha', require: false
+  gem 'rspec-collection_matchers'
+  gem 'rspec-its'
+
   # Call 'byebug' anywhere in the code to stop execution and get a debugger
   # console
   gem 'byebug', platform: :mri

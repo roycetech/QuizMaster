@@ -1,0 +1,15 @@
+<h3><p><strong>Question:</strong></p></h3>
+<p><%= raw(@question.content) %></p>
+
+<%= form_for @question, url: quiz_mode_next_url(@question), method: 'post' do |f| %>
+<br>
+    <div class="form-group">
+    <%= label_tag :answer, 'Your Answer:' %>
+
+    <%= f.text_field :actual_answer, class: 'form-control', autofocus: true %>
+    </div>
+
+    <div class="actions">
+        <%= submit_tag "Submit",  class: 'btn btn-default' %>
+    </div>
+<% end %>

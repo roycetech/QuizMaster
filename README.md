@@ -30,7 +30,7 @@ This is a simple demo app written in Ruby using Rails, Twitter Bootstrap.
 2. Pages
     Maintenance - Add or Edit questions
 
-    Quiz Mode - Randomly present the questions
+    Quiz Mode - Present the questions to be answered by the user.
 
         - Present the score in the end.
         - Ability to restart the question
@@ -46,7 +46,8 @@ This is a simple demo app written in Ruby using Rails, Twitter Bootstrap.
 6. Set the root to `home/view`
 7. Scaffold the question
 8. Customize the views
-
+9. Run `rails generate rspec:install`
+10. Develop the non-model quiz mode
 
 
 # References:
@@ -54,7 +55,9 @@ This is a simple demo app written in Ruby using Rails, Twitter Bootstrap.
 
 
 # Issues:
+
 Nokogiri throwing an error on `$ rails new`.
 Scaffolding causes some unwanted styles, comment them out.
+rails command hangs, issue `stop spring` to resolve.
 
 
