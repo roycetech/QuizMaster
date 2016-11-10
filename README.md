@@ -42,6 +42,7 @@ This is a simple demo app written in Ruby using Rails, Twitter Bootstrap.
 2. Run `brew install libxml2`.  (This is to solve issue when generating a new rails app.)
 3. Optionally run `bundle install` inside the project in case of error.
 4. generate rails using CLI
+5. Configure live-reload see changes in view as you edit.
 
 
 # References:
