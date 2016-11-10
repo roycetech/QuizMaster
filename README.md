@@ -43,8 +43,10 @@ This is a simple demo app written in Ruby using Rails, Twitter Bootstrap.
 3. Optionally run `bundle install` inside the project in case of error.
 4. generate rails using CLI
 5. Configure live-reload see changes in view as you edit.
-6. Scaffold the question
-7. Set the root to `home/view`
+6. Set the root to `home/view`
+7. Scaffold the question
+8. Customize the views
+
 
 
 # References:
@@ -53,4 +55,6 @@ This is a simple demo app written in Ruby using Rails, Twitter Bootstrap.
 
 # Issues:
 Nokogiri throwing an error on `$ rails new`.
+Scaffolding causes some unwanted styles, comment them out.
+
 
