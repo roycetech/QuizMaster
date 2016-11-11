@@ -60,10 +60,17 @@ This is a simple demo app written in Ruby using Rails, Twitter Bootstrap.
 Nokogiri throwing an error on `$ rails new`.
 Scaffolding causes some unwanted styles, comment them out.
 rails command hangs, issue `stop spring` to resolve.
+Deprecation warnings on testing.
 
 
 # How to Test:
 
 1. Run db migrations.
 2. Run `rspec` at the root of the project.
+3. `$ rake test` to run unittest.
+
+# Take aways
+FactoryGirl gem should be attached early so it will be considered in code the generation.
+
+
 

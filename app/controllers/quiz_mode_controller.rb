@@ -3,6 +3,8 @@ class QuizModeController < ApplicationController
   before_action :set_question, only: [:next]
   after_action :clean_session, only: [:complete]
 
+  attr_reader :question, :questions
+
   def start_quiz
     session[:answers] = {}
     session[:questions] = []

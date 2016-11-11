@@ -24,7 +24,6 @@ describe AnswerChecker do
   end
 
   let(:answer_contains_number) do
-    subject = subject.new
     subject.answer = 'Give me 5 and four'
     subject.actual_answer = 'Give me five and four'
     subject
@@ -35,8 +34,8 @@ describe AnswerChecker do
       expect(answer_exact.check_answer).to be_truthy
     end
 
-    it 'returns true if numeric compared to word' do
-      expect(answer_exact.check_answer).to be_truthy
+    it 'returns true if number compared to word' do
+      expect(answer_is_number.check_answer).to be_truthy
     end
 
     it 'returns true if word compared to number' do
@@ -44,7 +43,7 @@ describe AnswerChecker do
     end
 
     it 'returns true if word to number, vice versa' do
-      expect(answer_is_word_number.check_answer).to be_truthy
+      expect(answer_contains_number.check_answer).to be_truthy
     end
   end
 
