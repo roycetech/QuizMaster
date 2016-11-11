@@ -18,6 +18,7 @@ This is a simple demo app written in Ruby using Rails, Twitter Bootstrap.
 # Design Considerations
 
 - Allowing users to enter HTML is nice but it can be tricky to secure the page against malicious HTML codes.  Because of that, I will only allow `<br>` html tag, and I will implement a subset of markdown to allow some basic formatting like bold, italic, and code.
+- Scrap this markdown feature for future enhancements.  Time constraint.
 
 
 # Models
@@ -60,4 +61,9 @@ Nokogiri throwing an error on `$ rails new`.
 Scaffolding causes some unwanted styles, comment them out.
 rails command hangs, issue `stop spring` to resolve.
 
+
+# How to Test:
+
+1. Run db migrations.
+2. Run `rspec` at the root of the project.
 

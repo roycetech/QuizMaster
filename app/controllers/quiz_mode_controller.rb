@@ -3,8 +3,6 @@ class QuizModeController < ApplicationController
   before_action :set_question, only: [:next]
   after_action :clean_session, only: [:complete]
 
-  include QuizModeHelper
-
   def start_quiz
     session[:answers] = {}
     session[:questions] = []
@@ -85,5 +83,4 @@ class QuizModeController < ApplicationController
     session.delete(:questions)
     session.delete(:question_index)
   end
-
 end
