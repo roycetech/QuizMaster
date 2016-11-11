@@ -25,28 +25,29 @@ This is a simple demo app written in Ruby using Rails, Twitter Bootstrap.
 
 1. Question.
     - ID(system)
-    - contents: string
+    - contents: text
     - answer: string
 
 2. Pages
-    Maintenance - Add or Edit questions
 
-    Quiz Mode - Present the questions to be answered by the user.
+  1. Maintenance - Add, Edit, View, Delete questions.
 
-        - Present the score in the end.
-        - Ability to restart the question
+  2. Quiz Mode - Present the questions to be answered by the user.
+
+    - Present the score in the end.
+    - Ability to restart the question
 
 
 # Build Steps
 
 1. Clone project form github
 2. Run `brew install libxml2`.  (This is to solve issue when generating a new rails app.)
-3. Optionally run `bundle install` inside the project in case of error.
-4. generate rails using CLI
-5. Configure live-reload see changes in view as you edit.
+3. Run `bundle install` inside the project each time the `Gemfile` is modified to fetch new dependencies
+4. Generate rails using CLI
+5. Configure live-reload to see changes in the view as you edit.
 6. Set the root to `home/view`
 7. Scaffold the question
-8. Customize the views
+8. Develop the app
 9. Run `rails generate rspec:install`
 10. Develop the non-model quiz mode
 
