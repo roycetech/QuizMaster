@@ -29,6 +29,13 @@ describe AnswerChecker do
     subject
   end
 
+  let(:answer_with_lead_trail_space) do
+    subject.answer = 'Give   '
+    subject.actual_answer = '   Give'
+    subject
+  end
+
+
   describe '#check_answer' do
     it 'returns true if exact match' do
       expect(answer_exact.check_answer).to be_truthy
@@ -44,6 +51,9 @@ describe AnswerChecker do
 
     it 'returns true if word to number, vice versa' do
       expect(answer_contains_number.check_answer).to be_truthy
+    end
+    it 'ignores leading or trailing space in comparison' do
+      expect(answer_with_lead_trail_space.check_answer).to be_truthy
     end
   end
 

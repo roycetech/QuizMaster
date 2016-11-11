@@ -6,7 +6,7 @@ module AnswerChecker
   def check_answer
     formatted1 = nums_to_word(answer)
     formatted2 = nums_to_word(actual_answer)
-    @is_correct = formatted1 == formatted2
+    @is_correct = formatted1&.strip == formatted2&.strip
   end
 
   def nums_to_word(string)
