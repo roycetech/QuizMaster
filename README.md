@@ -75,7 +75,7 @@ CRUD used the generated template with minor tweaks.  These include removing the 
 3. `$ rake test` to run unittest.
 
 # Take aways
-FactoryGirl gem should be attached early so it will be considered in code the generation.
+FactoryGirl gem should be attached early so it will be considered in the code generation.
 
 
 
