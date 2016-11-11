@@ -24,8 +24,6 @@ class QuizModeController < ApplicationController
     total_correct = 0
     answers_hash = session[:answers]
 
-    puts("answers_hash: #{answers_hash}")
-
     @questions = []
     query.each do |question|
       question.actual_answer = answers_hash[question.id.to_s]

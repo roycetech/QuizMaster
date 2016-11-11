@@ -63,6 +63,10 @@ rails command hangs, issue `stop spring` to resolve.
 Deprecation warnings on testing.
 
 
+# Testing Notes:
+
+CRUD used the generated template with minor tweaks.  These include removing the show functionality for individual records. Changed redirect destination to the list page.  These changes are also reflected in the unit tests (not rspec).
+
 # How to Test:
 
 1. Run db migrations.
