@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'numbers_in_words'
 require 'numbers_in_words/duck_punch'
 
@@ -12,6 +14,7 @@ module AnswerChecker
   def nums_to_word(string)
     ren = /(\d+)/
     return string.gsub(ren, string[ren, 1].to_i.in_words) if string =~ ren
+
     string
   end
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Quiz Mode controller.
 class QuizModeController < ApplicationController
   before_action :set_question, only: [:next]
@@ -20,20 +22,26 @@ class QuizModeController < ApplicationController
   end
 
   def complete
-    query = Question.all
+    all_questions = Question.all
     total_correct = 0
     answers_hash = session[:answers]
 
     @questions = []
-    query.each do |question|
-      question.actual_answer = answers_hash[question.id.to_s]
-      question.check_answer
-      total_correct += 1 if question.is_correct
-      @questions << question
-      puts(question.actual_answer)
+    all_questions.each do |question|
+      answer = answers_hash[question.id.to_s]
+      total_correct += 1 if correct_answer?(question, answer)
     end
     session[:correct_answers_count] = total_correct
     render 'complete'
+  end
+
+  # @returns boolean true if answer to question is correct.
+  def correct_answer?(question, answer)
+    question.actual_answer = answer
+    question.check_answer
+    @questions << question
+    puts(question.actual_answer)
+    question.is_correct
   end
 
   def quiz
@@ -44,10 +52,7 @@ class QuizModeController < ApplicationController
   end
 
   def next
-    # store answer
-    answers_hash = session[:answers]
-    answers_hash[@question.id] = @question.actual_answer
-    session[:answers] = answers_hash
+    store_answer
 
     # go to next question
     current_question_index = session[:question_index].to_i
@@ -55,13 +60,19 @@ class QuizModeController < ApplicationController
     session[:question_index] = new_question_index
 
     if session[:questions].length == new_question_index
-      redirect_to quiz_mode_complete_url
-    else
-      redirect_to quiz_mode_quiz_url
+      return redirect_to quiz_mode_complete_url
     end
+
+    redirect_to quiz_mode_quiz_url
   end
 
   private
+
+  def store_answer
+    answers_hash = session[:answers]
+    answers_hash[@question.id] = @question.actual_answer
+    session[:answers] = answers_hash
+  end
 
   # Use callbacks to share common setup or constraints between actions.
   def set_question

@@ -1,4 +1,5 @@
-#
+# frozen_string_literal: true
+
 describe Question do
   let(:question) { subject }
 

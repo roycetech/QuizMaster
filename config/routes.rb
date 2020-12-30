@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   get 'quiz_mode/start_quiz'
   post 'quiz_mode/next'

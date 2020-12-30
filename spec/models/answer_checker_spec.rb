@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 describe AnswerChecker do
   subject do
     sut = Question.new
@@ -34,7 +36,6 @@ describe AnswerChecker do
     subject.actual_answer = '   Give'
     subject
   end
-
 
   describe '#check_answer' do
     it 'returns true if exact match' do
