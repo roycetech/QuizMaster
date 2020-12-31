@@ -42,13 +42,13 @@ describe QuizModeController do
   describe 'submit an answer' do
     it 'moves to the next question' do
       get :start_quiz
-      post :next, question: { actual_answer: 'Six' }
+      post :next, params: { question: { actual_answer: 'Six' } }
       expect(response).to redirect_to(quiz_mode_quiz_path)
     end
     it 'redirect to completion screen after the last question' do
       get :start_quiz
-      post :next, question: { actual_answer: 'Six' }
-      post :next, question: { actual_answer: 'Six' }
+      post :next, params: { question: { actual_answer: 'Six' } }
+      post :next, params: { question: { actual_answer: 'Six' } }
       # Hard coded double post to consume the two records defined in the
       # generated fixture.
       expect(response).to redirect_to(quiz_mode_complete_path)
