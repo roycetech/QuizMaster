@@ -43,6 +43,7 @@ end
 
 group :test do
   gem 'mocha', require: false
+  gem 'nokogiri', '>= 1.11.0.rc4'
   gem 'rspec-collection_matchers'
   gem 'rspec-its'
   gem 'shoulda'
