@@ -83,4 +83,4 @@ FactoryGirl gem should be attached early so it will be considered in the code ge
 
 ## References
 
-[http://guides.rubyonrails.org/getting_started.html](rails guide)
+[rails guide](http://guides.rubyonrails.org/getting_started.html)
